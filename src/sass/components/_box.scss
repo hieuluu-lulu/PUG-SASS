@@ -1,0 +1,48 @@
+@import '../base/mixins';
+@import '../base/variables';
+
+.box {
+    @include flex-column;
+    z-index: 1;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: $white;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 100px;
+    text-align: center;
+    transition: all 0.3s ease;
+    &__img {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    &__title {
+        display: block;
+        margin: 20px 0 5px;
+        color: $default;
+        font-family: 'Raleway', sans-serif;
+        @include font(1.7, null, 0.25px, 400);
+    }
+    &__text {
+        display: block;
+        @include font(1.4, null, 0.75px, 400);
+        color: $text-p;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $white;
+        bottom: -10px;
+        right: -10px;
+        left: 10px;
+        height: 100%;
+        z-index: -1;
+        border-radius: 20px;
+        opacity: 0.15;
+        margin: 0 auto;
+    }
+    &:hover {
+        transform: translateY(-4px);
+    }
+}

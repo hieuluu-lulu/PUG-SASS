@@ -1,0 +1,224 @@
+@import '../base/variables';
+@import '../base/mixins';
+.welcome {
+    position: relative;
+    overflow: hidden;
+    @include flex-box(center, center);
+    background-image: url(../../../assets/images/banner-bg.png);
+    @include background(no-repeat, center, cover);
+    height: 100vh;
+    &__head {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-55%);
+        width: 100%;
+        text-align: center;
+        &-title {
+            @include font(3.6, 54px, 1.4px, 500);
+            color: $white;
+            margin-bottom: 30px;
+        }
+        &-text {
+            color: $white;
+            @include font(1.4, 28px, 0.25px, 400);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        &-link {
+            background-color: $pink;
+            cursor: default;
+        }
+    }
+}
+// home
+.section {
+    padding: 100px 0;
+}
+.home {
+    margin-top: -220px;
+    padding-bottom: 30px;
+}
+// features
+.features {
+    padding-bottom: 100px;
+    &__img {
+        display: block;
+        margin: 0 auto;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+    [data_img='img-left'] {
+        -webkit-animation: FadeInLeft 0.6s ease 0.2s both;
+        animation: FadeInLeft 0.6s ease 0.2s both;
+    }
+    [data_img='img-right'] {
+        -webkit-animation: FadeInRight 0.6s ease 0.4s both;
+        animation: FadeInRight 0.6s ease 0.4s both;
+    }
+
+    &__info {
+        width: 100%;
+        height: auto;
+        margin-top: 35px;
+        &-heading h2 {
+            @include font(2.4, 42px, 0.25px, 500);
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        &-text {
+            @include font(1.6, 28px, 1px, 400);
+            color: $text-p;
+        }
+    }
+}
+.feature-second {
+    padding-top: 100px;
+    margin-top: 100px;
+    border-top: 1px solid $border-color;
+    flex-flow: row-reverse wrap;
+}
+// section process
+.process {
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: '';
+        width: 140%;
+        height: 140%;
+        position: absolute;
+        inset: 0;
+        background-image: url('../../../assets/images/work-process-bg.png');
+        @include background(no-repeat, center, cover);
+    }
+}
+.process .heading .heading__title h2 {
+    margin-bottom: 40px;
+    color: $white;
+}
+.process .heading .heading__desc p {
+    color: $white;
+}
+
+// section testimonial
+.testimonial {
+    padding-bottom: 80px;
+    background-color: $white;
+}
+// section counter
+.counter {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        background: url(../../../assets/images/fun-facts-bg.png);
+        width: 140%;
+        height: 140%;
+        @include background(no-repeat, center, cover);
+        top: -20%;
+        left: -20%;
+        opacity: 0.9;
+    }
+    &__content {
+        position: relative;
+        color: $white;
+        text-align: center;
+
+        &-item {
+            @include flex-column;
+            position: relative;
+            @include transition;
+            padding: 20px 0;
+            &:hover {
+                transform: translateY(-4px);
+            }
+            &::after {
+                content: '';
+                background: url(../../../assets/images/circle-dec.png);
+                @include background(no-repeat, center, null);
+                position: absolute;
+                top: 50%;
+                left: 65%;
+                height: 32px;
+                width: 70%;
+            }
+            &--last::after {
+                display: none;
+            }
+        }
+        .item__number {
+            font-size: 3.6rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+        }
+        .item__text {
+            font-size: 1.7rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+        }
+    }
+}
+// section blog
+
+.blog {
+    background-color: $white;
+    &__post {
+        text-align: center;
+        margin-bottom: 20px;
+        &-img {
+            width: 100%;
+            overflow: hidden;
+            height: 220px;
+            position: relative;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            img {
+                object-fit: contain;
+            }
+        }
+        &-content {
+            margin-top: 10px;
+            padding-bottom: 20px;
+        }
+        .content__title {
+            @include font(1.8, 2, null, 600);
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 10px;
+        }
+        .content__desc {
+            color: $text-p;
+            @include font(1.3, 2.6rem, 0.26px, normal);
+            font-family: 'Raleway', sans-serif;
+        }
+    }
+}
+// section contact
+.contact__address {
+    width: 100%;
+    &-title {
+        margin-bottom: 25px;
+        h4 {
+            @include font(1.8, 2, null, 500);
+        }
+    }
+    &-detail {
+        color: $color-p;
+        p {
+            @include font(1.4, 26px, 0.6px, 400);
+            margin: 25px 0;
+        }
+    }
+}
+.contact__form {
+    color: $text-p;
+    font-size: 1.4rem;
+    &-input {
+        padding: 14px 20px;
+        border: 1px solid $border-color;
+        border-radius: 25px;
+        width: 100%;
+        margin-bottom: 25px;
+        outline: none;
+    }
+}

@@ -1,0 +1,55 @@
+@import '../base/variables';
+@import '../base/mixins';
+.pricing {
+    background-color: $white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px 0 40px;
+    margin-top: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.01);
+    &__header {
+        @include font(1.7, 40px, null, null);
+        color: $default;
+        padding-bottom: 10px;
+    }
+    &__wrap {
+        padding: 20px 13px;
+        background-color: $blue-color;
+        border-radius: 20px;
+        width: 80%;
+        margin: 10px auto 35px;
+        color: $white;
+        &[active='active'] {
+            background-color: $pink;
+        }
+        &-currency {
+            font-size: 3.2rem;
+            position: relative;
+            top: -2px;
+            margin-right: 2px;
+        }
+        &-number {
+            @include font(2.8, null, null, 500);
+            font-family: 'Raleway', sans-serif;
+        }
+        &-month {
+            font-size: 1.4rem;
+            display: block;
+        }
+    }
+    &__list {
+        font-size: 1.3rem;
+        color: $text-p;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        margin-bottom: 25px;
+        padding: 0;
+        &-item {
+            margin-bottom: 10px;
+            text-decoration: line-through;
+            &.active {
+                text-decoration: none;
+            }
+        }
+    }
+}

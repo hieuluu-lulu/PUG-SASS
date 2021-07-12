@@ -1,0 +1,25 @@
+
+header.header 
+    .container  
+        .row
+            input(type="checkbox" id= "menu" hidden)
+            nav.header__nav
+                a.header__nav-brand(href="#")
+                    img(src="./assets/images/logo.png" alt="logo")
+               
+                ul.header__nav-list
+                    each item in listMenu 
+                        if(item === 'Home')
+                            li.list__item
+                                a.list__item-link(href="#")(class= "active")= item
+                        else
+                            li.list__item
+                                a.list__item-link(href="#")= item 
+                .header__nav-icon 
+                   label(for="menu")
+                        i(class="fas fa-bars")
+                        
+                           
+                           
+                    
+

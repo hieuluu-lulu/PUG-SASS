@@ -1,0 +1,31 @@
+@import '../base/mixins';
+@import '../base/variables';
+
+.footer {
+    padding: 30px 0;
+    background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+    &__socials {
+        color: $white;
+        text-align: center;
+        &-item {
+            display: inline-block;
+        }
+        .item__link {
+            display: block;
+            width: 36px;
+            text-align: center;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            margin: 0 10px;
+            color: $purple;
+            font-size: 1.6rem;
+            transition: all 0.2s ease;
+            background-color: $white;
+            &:hover {
+                background-color: $pink;
+                color: $white;
+            }
+        }
+    }
+}

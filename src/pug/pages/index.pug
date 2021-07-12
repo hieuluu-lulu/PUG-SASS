@@ -1,0 +1,86 @@
+extend ../layouts/layout.pug
+include ../base/mixin.pug
+block content
+    section.welcome 
+        .welcome__head
+            .container
+                .row 
+                    .col-lg-8(class=" offset-lg-2 col-md-12 col-sm-12")
+                        h1.welcome__head-title We provide the best 
+                            strong stagrery 
+                            <br/> to grow up your 
+                            strong bussiness
+                        p.welcome__head-text Softy Pinko is a professional Bootstrap 4.0 theme designed by Template Mo for your company at absolutely free of charge  
+                        a.welcome__head-link(class= "btn") Discover more 
+    section.home.section
+        .container  
+            .row
+                .col-lg-12 
+                    .row
+                        +card("Modern Strategy", "Customize anything in this template to fit your website needs")
+                        +card("Best Relationship", "Contact us immediately if you have a question in mind")
+                        +card("Ultimate Marketing", "You just need to tell your friends about our free templates")
+    section.features.section
+        .container 
+            +features("./assets/images/left-image.png","left-image", "Let’s discuss about you project","Nullam sit amet purus libero. Etiam ullamcorper nisl ut augue blandit, at finibus leo efficitur. Nam gravida purus non sapien auctor, ut aliquam magna ullamcorper.")(data_img="img-left")
+            +features("./assets/images/right-image.png","left-image", "We can help you to grow your business","Aenean pretium, ipsum et porttitor auctor, metus ipsum iaculis nisi, a bibendum lectus libero vitae urna. Sed id leo eu dolor luctus congue sed eget ipsum. Nunc nec luctus libero. Etiam quis dolor elit.")(class="feature-second")(data_img="img-right")
+    section.section.process 
+        .container
+            +headings(headingList.first.title, headingList.first.description)
+            .row.align-items-center.process__box
+                each item in boxList 
+                    +box(item, "Godard pabst prism fam cliche.")  
+    section.section.testimonial 
+        .container
+            +headings(headingList.second.title, headingList.second.description)   
+            .row 
+                each user in teamContent 
+                    +team-content(user.text, user.name)
+    section.section.price
+        .container 
+            +headings(headingList.third.title, headingList.third.description)
+            .row 
+                +pricing("Starter",14.05,60,600)(class="col-custom")
+                +pricing("Premium",21.05,120,1200)(class="col-custom")(active="active")
+                +pricing("Advanced",42.05,250,5000)(class="col-custom")
+
+    section.section.counter 
+        .counter__content
+            .container 
+                .row 
+                    +counter(126,"Projects")
+                    +counter(63,"Happy Clients")
+                    +counter(18,"Award wins")
+                    +counter(27,"Countries")(class="counter__content-item--last")
+    section.section.blog 
+        .container
+            +headings(headingList.four.title, headingList.four.description)
+            .row 
+                each item in blogContent 
+                    +blogCard(item.img, item.title, item.desc)(class="col-custom")
+    section.section.contact 
+        .container 
+            +headings(headingList.finally.title,headingList.finally.description)
+            .row 
+                .col-lg-4.col-md-6.col-sm-12.col-custom 
+                    .contact__address 
+                        .contact__address-title 
+                            h4 Keep in touch
+                        .contact__address-detail
+                            p 110-220 Quisque diam odio, maximus ac consectetur eu, 10260 auctor non lorem
+                            p You are NOT allowed to re-distribute Softy Pinko template on any template collection websites. Thank you.
+                .col-lg-8.col-md-6.col-sm-12.col-custom
+                    form.contact__form 
+                        .row 
+                            .col-lg-6.col-md-6.col-sm-12 
+                                input.contact__form-input.contact__form-input--left(placeholder="Full Name")
+                            .col-lg-6.col-md-6.col-sm-12 
+                                input.contact__form-input.contact__form-input--right(placeholder="E-Mail Address")
+                            .col-lg-12 
+                                textarea.contact__form-input(placeholder="Your Message" rows="8")
+                        button.btn Send Message
+
+
+
+                
+

@@ -1,0 +1,61 @@
+@import './variables';
+@import './mixins';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 1.2rem;
+    font-family: Verdana, Arial, Helvetica, Raleway, sans-serif;
+    line-height: 1.7;
+    background: $body-color;
+}
+::selection {
+    background-color: $pink;
+    color: $white;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+.btn {
+    text-transform: uppercase;
+    background-color: $blue-color;
+    color: $white;
+    line-height: 1;
+    letter-spacing: 0.25px;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    @include transition();
+    &:hover {
+        background-color: $pink;
+        color: $white !important;
+    }
+}
+.col-custom {
+    padding: 0 15px;
+}
